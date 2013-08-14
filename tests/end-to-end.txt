@@ -1,0 +1,21 @@
+#
+# End to End test for SEcloud
+# Note: we should fully automate these steps. that will enable
+#       us to do quick iterations.
+#
+
+1) deploy: deploy a new instance of SEcloud (website)
+2) project: use the front end to create a project based on specification.
+   use proper authentication to interact with SEcloud
+3) process: start all the jenkins jobs for this project.
+4) results: display results on the dashboard
+5) go/no-go: determine whether ship criteria is met.
+6) trends: repeat the process N times, and get the trends going.
+   simulate development to show progress/regression in trends.
+
+* project specification
+  name, git repo, list of quality metrics, ship criteria,
+  frequency (by default every commit, but can override this)
+
+* ship criteria
+  dictionary of quality metrics along with their thresholds
