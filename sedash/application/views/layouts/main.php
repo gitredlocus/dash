@@ -17,87 +17,81 @@
 		<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	</head>
 	<body>
-		<div class="navbar navbar-inverse">
-			<div class="navbar-inner">
-					<?php $this->widget('zii.widgets.CMenu',array(
-						'encodeLabel'=>false,
-						'htmlOptions'=>array('class'=>'nav'),
-						'items'=>array(
-							array(
-								'label'=>'Optimus <span>Prime</span>',
-								'url'=>'/',
-								'itemOptions'=>array('class'=>'logo'),
-								'active'=>(Yii::app()->controller->id == 'event' && Yii::app()->controller->action->id == 'index'), 
-							),
-							array(
-								'encodeLabel'=>'true', 
-								'label'=>'Events <b class="caret"></b>',
-								'url'=>'#', 
-								'active'=>(strpos(Yii::app()->request->requestUri, '/event/')===0), 
-								'itemOptions'=>array('class'=>'dropdown'),
-								'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'), 
-								'submenuOptions'=>array('class'=>'dropdown-menu'),
-								'items'=>array(
-									array('label'=>'Create an Event','url'=>'/event/create'),
-									array('label'=>'Create an Event Type','url'=>'/event/type/create'),														
-								)
-							),
-							array(
-								'encodeLabel'=>'true', 
-								'label'=>'Assets <b class="caret"></b>',
-								'url'=>'#', 
-								'active'=>(strpos(Yii::app()->request->requestUri, '/asset/')===0), 
-								'itemOptions'=>array('class'=>'dropdown'),
-								'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'), 
-								'submenuOptions'=>array('class'=>'dropdown-menu'),
-								'items'=>array(
-									array('label'=>'Create an Asset Type','url'=>'/asset/type/create'),														
-								)
-							),
-							array(
-								'encodeLabel'=>'true', 
-								'label'=>'Users <b class="caret"></b>',
-								'url'=>'#', 
-								'active'=>(strpos(Yii::app()->request->requestUri, '/user/')===0 && Yii::app()->controller->action->id != 'tasks'), 
-								'itemOptions'=>array('class'=>'dropdown'),
-								'linkOptions'=>array('class'=>'dropdown-toggle','data-toggle'=>'dropdown'), 
-								'submenuOptions'=>array('class'=>'dropdown-menu'),
-								'items'=>array(
-									array('label'=>'View Groups','url'=>'/user/group/'),	
-									array('label'=>'Create a Group','url'=>'/user/group/create'),										
-								)
-							),
-						),
-					)); ?>
-					<?php $this->widget('zii.widgets.CMenu',array(
-					  'encodeLabel'=>false,
-					  'htmlOptions'=>array('class'=>'nav pull-right'),
-					  'items'=>array(
-					  	array(
-					  		'encodeLabel'=>true,
-					  		'label'=>'My Tasks',
-					  		'url'=>'/user/' . Yii::app()->user->id . '/tasks', 
-					  		'active'=>(Yii::app()->controller->id == 'user' && Yii::app()->controller->action->id == 'tasks'),
-					  	),
-					  	array(
-					  		'encodeLabel'=>true,
-					  		'label'=>'Logout',
-					  		'url'=>'/user/logout',
-					  		'itemOptions'=>array('class'=>'last'),
-					  	),
-					  ),
-					)); ?>
-					<ul class="nav pull-right">
-						<li><input type="text" name="search" class="search"/></li>
-					</ul>
+	<div class="navbar navbar-top navbar-inverse">
+	  <div class="navbar-inner">
+	    <div class="container-fluid">
+	      <a class="brand" href="#">Core Admin</a>
+	
+	      <!-- the new toggle buttons -->
+	
+	      <ul class="nav pull-right">
+					<li class="toggle-primary-sidebar hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-primary"><button type="button" class="btn btn-navbar"><i class="icon-th-list"></i></button></li>
+					<li class="hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-top"><button type="button" class="btn btn-navbar"><i class="icon-align-justify"></i></button></li>
+				</ul>
+	
+	      <div class="nav-collapse nav-collapse-top collapse">
+	
+	      	<ul class="nav full pull-right">
+	      	  <li class="dropdown user-avatar">
+					
+	      	    <!-- the dropdown has a custom user-avatar class, this is the small avatar with the badge -->
+					
+	      	    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+	      	      <span>
+									<span>John Smith <i class="icon-caret-down"></i></span>
+	      	        <span class="badge badge-dark-red">5</span>
+	      	      </span>
+	      	    </a>
+					
+	      	    <ul class="dropdown-menu">
+					
+	      	      <!-- the first element is the one with the big avatar, add a with-image class to it -->
+					
+	      	      <li class="with-image">
+	      	        <div class="avatar">
+	      	          <%= image_tag "avatars/avatar1.jpg" %>
+	      	        </div>
+	      	        <span>John Smith</span>
+	      	      </li>
+					
+	      	      <li class="divider"></li>
+					
+	      	      <li><a href="#"><i class="icon-user"></i> <span>Profile</span></a></li>
+	      	      <li><a href="#"><i class="icon-cog"></i> <span>Settings</span></a></li>
+	      	      <li><a href="#"><i class="icon-envelope"></i> <span>Messages</span> <span class="label label-dark-red pull-right">5</span></a></li>
+	      	      <li><a href="#"><i class="icon-off"></i> <span>Logout</span></a></li>
+	      	    </ul>
+	      	  </li>
+	      	</ul>
+	
+	        <form class="navbar-search pull-right">
+	          <input type="text" class="search-query animated" placeholder="Search">
+	          <i class="icon-search"></i>
+	        </form>
+	
+	        <ul class="nav pull-right">
+	          <li class="active"><a href="#" title="Go home"><i class="icon-home"></i> Home</a></li>
+	          <li><a href="#" title="Manage users"><i class="icon-user"></i> Users</a></li>
+	          <li class="dropdown">
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	              <li><a href="#">Action</a></li>
+	              <li><a href="#">Another action</a></li>
+	              <li><a href="#">Some link</a></li>
+	              <li><a href="#">One more separated link</a></li>
+	            </ul>
+	          </li>
+	
+	
+	        </ul>
+	
+				</div>
+	
 			</div>
-		</div><!-- navbar -->
-			<?php echo $content; ?>
-			<div class="clearfix"></div>
-			<div id="footer">
-			</div><!-- footer -->
-			
-		</div><!-- page -->
+		</div>
+		</div>
+		<?php echo $content; ?>
+		<div id="footer"></div><!-- footer -->
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
