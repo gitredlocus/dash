@@ -1,0 +1,21 @@
+.navbar .navbar-inner .logo {
+	font-weight: 600;
+	text-transform: uppercase;
+}
+
+.navbar .navbar-inner .logo a {
+	padding-left: 35px;
+	margin-left: 10px;
+	color: #fff;
+	font-size: 20px;
+	background: url('../img/logo.png') no-repeat 0px 9px;
+	border-left: 0;
+}
+
+.logo span {
+	font-weight: 300;
+}
+
+ul.nav .search {
+	margin: 6px 10px 0 0;
+}
