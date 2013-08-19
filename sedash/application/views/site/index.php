@@ -4,17 +4,43 @@
 $this->pageTitle=Yii::app()->name;
 ?>
 
-<h1>Welcome to <i><?php echo CHtml::encode(Yii::app()->name); ?></i></h1>
+<div class="row-fluid">
 
-<p>Congratulations! You have successfully created your Yii application.</p>
+  <div class="span3">
+  </div>
 
-<p>You may change the content of this page by modifying the following two files:</p>
-<ul>
-	<li>View file: <code><?php echo __FILE__; ?></code></li>
-	<li>Layout file: <code><?php echo $this->getLayoutFile('main'); ?></code></li>
-</ul>
+  <div class="span9">
+  </div>
+</div>
 
-<p>For more details on how to further develop this application, please read
-the <a href="http://www.yiiframework.com/doc/">documentation</a>.
-Feel free to ask in the <a href="http://www.yiiframework.com/forum/">forum</a>,
-should you have any questions.</p>
+<div class="row-fluid">
+  <div class="span6">
+    <div class="box">
+      <div class="box-header">
+        <div class="title">Full calendar</div>
+      </div>
+
+      <div class="box-content">
+        <div id="calendar"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="span6">
+    <div class="box">
+      <div class="box-header">
+        <span class="title">News with avatars (scrollable box)</span>
+        <ul class="box-toolbar">
+          <li><span class="label label-blue">178</span></li>
+        </ul>
+      </div>
+      <div class="box-content scrollable" style="height: 552px; overflow-y: auto">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row-fluid">
+  <div class="span12">
+  </div>
+</div>
